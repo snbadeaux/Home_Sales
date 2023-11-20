@@ -3,10 +3,9 @@
 Through the use of PySpark and SparkSQL, the aim of this assignment was to determine key metrics about home sales.<br>
 After using Spark to create temporary views, partition the data, cache, and uncache a temp table, the next aim was to compare run times of the same queries.<br>
 
-## Findings
+## Queries/Findings
 1. What is the average price for a four-bedroom house sold each year? Round off your answer to two decimal places.<br>
      <img width="148" alt="image" src="https://github.com/snbadeaux/Home_Sales/assets/134640833/9584e664-b30a-4ee0-a234-b190ca3248df">
-
 
 2.	What is the average price of a home for each year it was built that has three bedrooms and three bathrooms? Round off your answer to two decimal places.
    <img width="151" alt="image" src="https://github.com/snbadeaux/Home_Sales/assets/134640833/51a346c0-379d-42de-9731-1c4f721d0df8">
@@ -26,3 +25,9 @@ After using Spark to create temporary views, partition the data, cache, and unca
    Parquet Partitioned Data:
    <img width="240" alt="image" src="https://github.com/snbadeaux/Home_Sales/assets/134640833/d21b00e3-6b50-4565-b78e-80289ec370be">
 
+# Conclusion
+After caching the temporary table, the run time for the query was significantly faster. The partitioned data was slightly slower than the original data, even though it was also cached. This might be due to the fact that the query has to scan over a number of partitions, and the query optimizer has to read metadata for each partition, which can be time-consuming. Partitioning is only useful if you know that you only need to work with one to two partitioned sections rather than the whole dataset. 
+
+# Sources
+1. Dataset provided by edX Boot Camps LLC
+2. ChatGPT https://chat.openai.com/
